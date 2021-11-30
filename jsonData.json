@@ -1,0 +1,20 @@
+{
+  "id":27,
+  "iata":"ABC",
+  "icao":"LEAB",
+  "name":"Albacete Airport",
+  "location":"Albacete, Castilla-La Mancha, Spain",
+  "street_number":"",
+  "street":"",
+  "city":"",
+  "county":"Albacete",
+  "state":"Castile-La Mancha",
+  "country_iso":"ES",
+  "country":"Spain",
+  "postal_code":"2006",
+  "phone":"+34 902 40 47 04",
+  "latitude":38.945427,
+  "longitude":-1.880315,
+  "uct":120,
+  "website":"http://www.aena-aeropuertos.es/"
+}
