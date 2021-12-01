@@ -37,12 +37,30 @@ public class APIUtility {
     }
 
 
-    public static ApiResponse getAirportsFromAPI()
+    public static ApiResponse getAirportsFromAPI(String searchTerm)
     {
-    //    searchTerm = searchTerm.trim().replace("","%20");
-
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://airport-info.p.rapidapi.com/airport?iata=YYZ" ))
+                .uri(URI.create("https://aerodatabox.p.rapidapi.com/airports/search/term?q="+ searchTerm))
+                .header("x-rapidapi-host", "aerodatabox.p.rapidapi.com")
+                .header("x-rapidapi-key", "009bfd70c5msh425674fe5331d9bp1fbb4bjsn72d0db0eb5b8")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+
+        HttpResponse<Path> response = null;
+        try {
+            response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofFile(Paths.get("jsonData.json")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(response.body());
+
+
+
+      /**
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://airport-info.p.rapidapi.com/airport?iata=" + searchTerm))
                 .header("x-rapidapi-host", "airport-info.p.rapidapi.com")
                 .header("x-rapidapi-key", "009bfd70c5msh425674fe5331d9bp1fbb4bjsn72d0db0eb5b8")
                 .method("GET", HttpRequest.BodyPublishers.noBody())
@@ -54,7 +72,8 @@ public class APIUtility {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return getAirportJsonfile();
+       */
+       return getAirportJsonfile();
     }
 
 
