@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane prefHeight="471.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21200465750comp2084assignment2.AirportViewController">
+<AnchorPane prefHeight="471.0" prefWidth="578.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21200465750comp2084assignment2.Controllers.AirportViewController">
    <children>
       <BorderPane layoutX="-2.0" layoutY="-1.0" prefHeight="400.0" prefWidth="600.0">
          <top>
@@ -28,7 +28,7 @@
             <ListView fx:id="initialAirportDataListView" prefHeight="368.0" prefWidth="443.0" BorderPane.alignment="CENTER" />
          </left>
          <right>
-            <Button mnemonicParsing="false" prefHeight="21.0" prefWidth="105.0" text="Button" BorderPane.alignment="CENTER" />
+            <Button mnemonicParsing="false" prefHeight="21.0" prefWidth="105.0" styleClass="jfx-button" text="Button" BorderPane.alignment="CENTER" />
          </right>
          <bottom>
             <Label prefHeight="25.0" prefWidth="28.0" text="Label" BorderPane.alignment="CENTER" />
