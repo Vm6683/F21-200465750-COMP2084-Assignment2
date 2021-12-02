@@ -1,6 +1,7 @@
 package com.example.f21200465750comp2084assignment2;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.google.gson.stream.JsonReader;
 
 import java.io.FileReader;
@@ -14,10 +15,10 @@ import java.nio.file.Paths;
 
 public class APIUtility {
 
-    public static  ApiResponse getAirportJsonfile()
+ /*
+        // This method stores Json file in our local machine and then returns on GUI.
+        public static  ApiResponse getAirportJsonfile()
     {
-
-
         Gson gson = new Gson();
         ApiResponse response = null;
 
@@ -35,8 +36,8 @@ public class APIUtility {
 
         return response;
     }
-
-
+*/
+        // This method returns response directly from API
     public static ApiResponse getAirportsFromAPI(String searchTerm)
     {
         HttpRequest request = HttpRequest.newBuilder()
@@ -46,34 +47,26 @@ public class APIUtility {
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
 
-        HttpResponse<Path> response = null;
+        HttpResponse<String> response = null;
         try {
-            response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofFile(Paths.get("jsonData.json")));
+            response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(response.body());
+        String jsonString = response.body();
 
+        Gson gson = new Gson();
+        ApiResponse apiResponse = null;
 
-
-      /**
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://airport-info.p.rapidapi.com/airport?iata=" + searchTerm))
-                .header("x-rapidapi-host", "airport-info.p.rapidapi.com")
-                .header("x-rapidapi-key", "009bfd70c5msh425674fe5331d9bp1fbb4bjsn72d0db0eb5b8")
-                .method("GET", HttpRequest.BodyPublishers.noBody())
-                .build();
-        try {
-            HttpResponse<Path> response1 = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofFile(Paths.get("jsonData.json")));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        try{
+            apiResponse = gson.fromJson(jsonString, ApiResponse.class);
+        } catch (JsonSyntaxException e) {
             e.printStackTrace();
         }
-       */
-       return getAirportJsonfile();
+        return apiResponse;
+
     }
 
 

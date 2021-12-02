@@ -1,5 +1,8 @@
-package com.example.f21200465750comp2084assignment2;
+package com.example.f21200465750comp2084assignment2.Controllers;
 
+import com.example.f21200465750comp2084assignment2.APIUtility;
+import com.example.f21200465750comp2084assignment2.Airport;
+import com.example.f21200465750comp2084assignment2.ApiResponse;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
@@ -21,7 +24,7 @@ public class AirportViewController {
         if (apiResponse.getItems() != null) {
         
             initialAirportDataListView.getItems().addAll(apiResponse.getItems());
-            setAirportFound();
+
         } else {
 
         }

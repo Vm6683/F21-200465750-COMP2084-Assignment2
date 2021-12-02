@@ -1,7 +1,5 @@
 package com.example.f21200465750comp2084assignment2;
 
-import java.util.ArrayList;
-
 public class Airport {
 
     private String icao;
@@ -16,6 +14,29 @@ public class Airport {
 
     private String countryCode;
 
+    public String getIcao() {
+        return icao;
+    }
+
+    public void setIcao(String icao) {
+        this.icao = icao;
+    }
+
+    public String getIata() {
+        return iata;
+    }
+
+    public void setIata(String iata) {
+        this.iata = iata;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getShortName() {
         return shortName;
@@ -41,32 +62,8 @@ public class Airport {
         this.countryCode = countryCode;
     }
 
-    public String getIata() {
-        return iata;
-    }
-
-    public void setIata(String iata) {
-        this.iata = iata;
-    }
-
-    public String getIcao() {
-        return icao;
-    }
-
-    public void setIcao(String icao) {
-        this.icao = icao;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String toString()
     {
-        return String.format("%s-%s-%s-%s-%s-s",iata, icao, name, shortName, municipalityName);
+        return String.format("%s-%s-%s-%s-%s",iata, icao, name, shortName, municipalityName);
     }
 }

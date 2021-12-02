@@ -7,4 +7,6 @@ module com.example.f21200465750comp2084assignment2 {
 
     opens com.example.f21200465750comp2084assignment2 to javafx.fxml,com.google.gson;
     exports com.example.f21200465750comp2084assignment2;
+    exports com.example.f21200465750comp2084assignment2.Controllers;
+    opens com.example.f21200465750comp2084assignment2.Controllers to com.google.gson, javafx.fxml;
 }
