@@ -7,10 +7,8 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-
 
 <AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21200465750comp2084assignment2.Controllers.AirportDetailsViewController">
    <children>
@@ -56,7 +54,6 @@
                      </children>
                   </GridPane>
                   <ListView fx:id="urlsListView" prefHeight="200.0" prefWidth="200.0" />
-                  <HBox />
                </children>
             </VBox>
          </center>
