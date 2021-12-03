@@ -5,7 +5,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.TimeZone;
 
-public class AirportDetails {
+public class AirportDetails extends ApiResponse {
 
     private String icao;
 

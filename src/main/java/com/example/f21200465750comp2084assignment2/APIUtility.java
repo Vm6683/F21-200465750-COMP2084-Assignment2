@@ -84,10 +84,10 @@ public class APIUtility {
        String jsonString = response.body();
 
         Gson gson = new Gson();
-        ApiResponse airportDetails = null;
+        AirportDetails airportDetails = null;
 
         try {
-            airportDetails = gson.fromJson(jsonString, ApiResponse.class);
+            airportDetails = gson.fromJson(jsonString, AirportDetails.class);
         } catch (JsonSyntaxException e){
             e.printStackTrace();
         }

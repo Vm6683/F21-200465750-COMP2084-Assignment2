@@ -49,13 +49,10 @@ public class AirportDetailsViewController {
             icaolabel.getText();
 
         }
-
-
         }
 
        /*AirportDetails airportDetails = null;
         airportDetails = APIUtility.getAirportDetailsFromAPI();
-
         icaolabel.setText(airportDetails.getIcao());
         iataLabel.setText(airportDetails.getIata());
         shortNameLabel.setText(airportDetails.getShortName());
