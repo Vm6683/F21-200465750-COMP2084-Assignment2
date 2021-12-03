@@ -65,33 +65,34 @@ public class APIUtility {
 
     }
 
-    public static ApiResponse getAirportDetailsFromAPI() {
+    public static AirportDetails getAirportDetailsFromAPI() {
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://aerodatabox.p.rapidapi.com/airports/icao/CYYZ" ))
-                .header("x-rapidapi-host", "aerodatabox.p.rapidapi.com")
+                .uri(URI.create("https://airport-info.p.rapidapi.com/airport?iata=YYZ"))
+                .header("x-rapidapi-host", "airport-info.p.rapidapi.com")
                 .header("x-rapidapi-key", "009bfd70c5msh425674fe5331d9bp1fbb4bjsn72d0db0eb5b8")
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
         HttpResponse<String> response = null;
         try {
-            response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+            response  = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-       String jsonString = response.body();
+
+        String jsonString = response.body();
 
         Gson gson = new Gson();
         AirportDetails airportDetails = null;
 
-        try {
+        try{
             airportDetails = gson.fromJson(jsonString, AirportDetails.class);
-        } catch (JsonSyntaxException e){
+        } catch (JsonSyntaxException e) {
             e.printStackTrace();
         }
+
         return airportDetails;
     }
 }
-

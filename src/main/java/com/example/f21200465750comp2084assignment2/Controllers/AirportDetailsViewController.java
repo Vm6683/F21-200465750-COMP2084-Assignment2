@@ -2,65 +2,74 @@ package com.example.f21200465750comp2084assignment2.Controllers;
 
 import com.example.f21200465750comp2084assignment2.APIUtility;
 import com.example.f21200465750comp2084assignment2.AirportDetails;
-import com.example.f21200465750comp2084assignment2.ApiResponse;
-import com.example.f21200465750comp2084assignment2.Urls;
+
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 
-import java.io.IOException;
 
-public class AirportDetailsViewController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+
+public class AirportDetailsViewController implements Initializable {
 
     @FXML
-    private Label continentLabel;
+    private Label cityLabel;
 
     @FXML
     private Label countryLabel;
 
     @FXML
-    private Label iataLabel;
-
-    @FXML
-    private Label icaolabel;
-
-    @FXML
-    private Label localTimeLabel;
-
-    @FXML
-    private Label shortNameLabel;
-
-    @FXML
     private Label fullNameLabel;
 
     @FXML
-    private Label timeZoneLabel;
+    private Label iataLabel;
 
     @FXML
-    private ListView<Urls> urlsListView;
+    private Label icaoLabel;
+
+    @FXML
+    private Label nameLabel;
+
+    @FXML
+    private Label phoneLabel;
+
+    @FXML
+    private Label postalCodeLabel;
+
+    @FXML
+    private Label streetLabel;
+
+    @FXML
+    private Label streetNumberLabel;
+
+    @FXML
+    private Label websiteLabel;
 
 
 
-    public void getAirportDetails(){
 
-        ApiResponse airportDetails = APIUtility.getAirportDetailsFromAPI();
-
-        if (airportDetails.getItems() != null) {
-            icaolabel.getText();
-
-        }
-        }
-
-       /*AirportDetails airportDetails = null;
-        airportDetails = APIUtility.getAirportDetailsFromAPI();
-        icaolabel.setText(airportDetails.getIcao());
-        iataLabel.setText(airportDetails.getIata());
-        shortNameLabel.setText(airportDetails.getShortName());
-        fullNameLabel.setText(airportDetails.getFullName());
-        timeZoneLabel.setText(String.valueOf(airportDetails.getTimeZone()));
-        localTimeLabel.setText(String.valueOf(airportDetails.getLocalTime()));
-        countryLabel.setText(String.valueOf(airportDetails.getCountry()));
-        continentLabel.setText(String.valueOf(airportDetails.getContinents()));*/
-
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadAirportDetails();
     }
+    public void loadAirportDetails(){
+        AirportDetails airportDetails = null;
+        airportDetails = APIUtility.getAirportDetailsFromAPI();
+
+        iataLabel.setText(airportDetails.getIata());
+        icaoLabel.setText(airportDetails.getIcao());
+        nameLabel.setText(airportDetails.getName());
+        streetNumberLabel.setText(airportDetails.getStreet_number());
+        streetLabel.setText(airportDetails.getStreet());
+        cityLabel.setText(airportDetails.getCity());
+        countryLabel.setText(airportDetails.getCountry());
+        postalCodeLabel.setText(airportDetails.getPostal_code());
+        phoneLabel.setText(airportDetails.getPhone());
+        websiteLabel.setText(airportDetails.getWebsite());
+    }
+}
+
+
+
