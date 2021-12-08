@@ -44,7 +44,7 @@
                                 <Label text="ICAO Code :" GridPane.rowIndex="1" />
                                 <Label text="Name:" GridPane.rowIndex="2" />
                                 <Label layoutX="10.0" layoutY="109.0" text="Street Number :" GridPane.rowIndex="3" />
-                                <Label text="Street :" GridPane.rowIndex="4" />
+                                <Label text="Street Name:" GridPane.rowIndex="4" />
                                 <Label text="City :" GridPane.rowIndex="5" />
                                 <Label text="Country :" GridPane.rowIndex="6" />
                                 <Label fx:id="iataLabel" prefHeight="19.0" prefWidth="98.0" text="Label" GridPane.columnIndex="1" />
@@ -55,7 +55,7 @@
                                 <Label fx:id="cityLabel" prefHeight="19.0" prefWidth="137.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                                 <Label fx:id="countryLabel" prefHeight="19.0" prefWidth="117.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                                 <Label text="Postal code :" GridPane.rowIndex="7" />
-                                <Label text="Phone :" GridPane.rowIndex="8" />
+                                <Label text="Phone Number:" GridPane.rowIndex="8" />
                                 <Label text="Website :" GridPane.rowIndex="9" />
                                 <Label fx:id="postalCodeLabel" prefHeight="19.0" prefWidth="262.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                                 <Label fx:id="phoneLabel" prefHeight="19.0" prefWidth="202.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />

@@ -1,20 +1,15 @@
 package com.example.f21200465750comp2084assignment2.Controllers;
-
-import com.example.f21200465750comp2084assignment2.APIUtility;
+import com.example.f21200465750comp2084assignment2.Utilities.APIUtility;
 import com.example.f21200465750comp2084assignment2.AirportDetails;
-
 import com.example.f21200465750comp2084assignment2.InitializeAirport;
-import com.example.f21200465750comp2084assignment2.SceneChanger;
+import com.example.f21200465750comp2084assignment2.Utilities.SceneChanger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 
 public class AirportDetailsViewController implements Initializable, InitializeAirport {
 
@@ -51,15 +46,19 @@ public class AirportDetailsViewController implements Initializable, InitializeAi
     @FXML
     private Label websiteLabel;
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadAirportDetails("yyz");
+
     }
+
+    /**
+     * This method will give response when user click on get more details button
+     * updates labels according to API response .
+     * @param iataCode
+     */
     public void loadAirportDetails(String iataCode){
         AirportDetails airportDetails = null;
         airportDetails = APIUtility.getAirportDetailsFromAPI(iataCode);
-
         iataLabel.setText(airportDetails.getIata());
         icaoLabel.setText(airportDetails.getIcao());
         nameLabel.setText(airportDetails.getName());
@@ -72,13 +71,13 @@ public class AirportDetailsViewController implements Initializable, InitializeAi
         phoneLabel.setText(airportDetails.getPhone());
         websiteLabel.setText(airportDetails.getWebsite());
     }
-
+    /**
+     * This method refers to SceneChanger class. It changes scene when user clicks on return to main page Button.
+     * @param event
+     * @throws IOException
+     */
     @FXML
     private void returnToMainPage(ActionEvent event) throws IOException {
         SceneChanger.changeScenes(event, "airport-view.fxml");
     }
-
 }
-
-
-
