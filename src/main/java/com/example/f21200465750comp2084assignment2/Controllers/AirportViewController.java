@@ -1,5 +1,4 @@
 package com.example.f21200465750comp2084assignment2.Controllers;
-
 import com.example.f21200465750comp2084assignment2.APIUtility;
 import com.example.f21200465750comp2084assignment2.Airport;
 import com.example.f21200465750comp2084assignment2.ApiResponse;
@@ -27,16 +26,13 @@ public class AirportViewController {
     public void getSearchResults() {
         initialAirportDataListView.getItems().clear();
         errorMsgLabel.setVisible(false);
-
         ApiResponse apiResponse = APIUtility.getAirportsFromAPI(searchTextField.getText());
         if (apiResponse.getItems() != null) {
             initialAirportDataListView.getItems().addAll(apiResponse.getItems());
         } else {
             errorMsgLabel.setVisible(true);
-
         }
     }
-
     @FXML
     private  void getAirportDetails(ActionEvent event) throws IOException {
         String iataCode = initialAirportDataListView.getSelectionModel().getSelectedItem().getIata();

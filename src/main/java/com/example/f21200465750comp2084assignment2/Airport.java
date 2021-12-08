@@ -64,6 +64,6 @@ public class Airport {
 
     public String toString()
     {
-        return String.format("%s-%s-%s-%s-%s",iata, icao, name, shortName, municipalityName);
+        return String.format("%s-%s-%s",iata, name, shortName);
     }
 }

@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21200465750comp2084assignment2.Controllers.AirportDetailsViewController">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21200465750comp2084assignment2.Controllers.AirportDetailsViewController">
     <children>
         <BorderPane layoutX="110.0" layoutY="81.0" prefHeight="500.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
-                <Label fx:id="fullNameLabel" text="Airport Fullname" BorderPane.alignment="CENTER" />
+                <Label id="header" fx:id="fullNameLabel" text="Airport Fullname" BorderPane.alignment="CENTER" />
             </top>
             <center>
                 <VBox BorderPane.alignment="CENTER">
@@ -65,9 +65,9 @@
                     </children>
                 </VBox>
             </center>
-            <bottom>
-                <Button mnemonicParsing="false" onAction="#returnToMainPage" text="Retuen to Main Page" BorderPane.alignment="CENTER" />
-            </bottom>
+         <bottom>
+            <Button mnemonicParsing="false" onAction="#returnToMainPage" text="Button" BorderPane.alignment="CENTER" />
+         </bottom>
         </BorderPane>
     </children>
     <padding>

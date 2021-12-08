@@ -63,6 +63,7 @@ public class AirportDetailsViewController implements Initializable, InitializeAi
         iataLabel.setText(airportDetails.getIata());
         icaoLabel.setText(airportDetails.getIcao());
         nameLabel.setText(airportDetails.getName());
+        fullNameLabel.setText(airportDetails.getName());
         streetNumberLabel.setText(airportDetails.getStreet_number());
         streetLabel.setText(airportDetails.getStreet());
         cityLabel.setText(airportDetails.getCity());
