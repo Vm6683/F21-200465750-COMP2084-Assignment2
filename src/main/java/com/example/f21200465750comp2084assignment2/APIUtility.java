@@ -65,10 +65,10 @@ public class APIUtility {
 
     }
 
-    public static AirportDetails getAirportDetailsFromAPI() {
+    public static AirportDetails getAirportDetailsFromAPI(String iata) {
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://airport-info.p.rapidapi.com/airport?iata=YYZ"))
+                .uri(URI.create("https://airport-info.p.rapidapi.com/airport?iata="+ iata))
                 .header("x-rapidapi-host", "airport-info.p.rapidapi.com")
                 .header("x-rapidapi-key", "009bfd70c5msh425674fe5331d9bp1fbb4bjsn72d0db0eb5b8")
                 .method("GET", HttpRequest.BodyPublishers.noBody())

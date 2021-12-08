@@ -52,11 +52,11 @@ public class AirportDetailsViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadAirportDetails();
+        loadAirportDetails("yyz");
     }
-    public void loadAirportDetails(){
+    public void loadAirportDetails(String iataCode){
         AirportDetails airportDetails = null;
-        airportDetails = APIUtility.getAirportDetailsFromAPI();
+        airportDetails = APIUtility.getAirportDetailsFromAPI(iataCode);
 
         iataLabel.setText(airportDetails.getIata());
         icaoLabel.setText(airportDetails.getIcao());
