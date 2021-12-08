@@ -1,0 +1,13 @@
+.root
+{
+    -fx-background-color: lightGreen;
+    -fx-font-size: 12pt;
+    -fx-font-family: 'Times New Roman', serif;
+    -fx-font-weight: 800;
+}
+#header
+{
+    -fx-font-size: 25pt;
+    -fx-font-style: oblique;
+    -fx-font-color: #267;
+}
