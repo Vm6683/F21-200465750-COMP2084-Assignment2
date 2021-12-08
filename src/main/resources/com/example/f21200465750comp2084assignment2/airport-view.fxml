@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="700.0" styleClass="root" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21200465750comp2084assignment2.Controllers.AirportViewController">
    <children>
-      <BorderPane layoutX="-2.0" layoutY="-1.0" prefHeight="600.0" prefWidth="700.0" styleClass="root" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane layoutX="-2.0" layoutY="-1.0" prefHeight="600.0" prefWidth="700.0" styleClass="root" stylesheets="@styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
                <children>
@@ -25,7 +25,7 @@
             </HBox>
          </top>
          <left>
-            <ListView fx:id="initialAirportDataListView" prefHeight="409.0" prefWidth="373.0" BorderPane.alignment="CENTER">
+            <ListView fx:id="initialAirportDataListView" prefHeight="409.0" prefWidth="373.0" stylesheets="@styles.css" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets left="10.0" />
                </BorderPane.margin></ListView>
