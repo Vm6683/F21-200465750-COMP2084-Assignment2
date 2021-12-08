@@ -3,16 +3,20 @@ package com.example.f21200465750comp2084assignment2.Controllers;
 import com.example.f21200465750comp2084assignment2.APIUtility;
 import com.example.f21200465750comp2084assignment2.AirportDetails;
 
+import com.example.f21200465750comp2084assignment2.InitializeAirport;
+import com.example.f21200465750comp2084assignment2.SceneChanger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class AirportDetailsViewController implements Initializable {
+public class AirportDetailsViewController implements Initializable, InitializeAirport {
 
     @FXML
     private Label cityLabel;
@@ -48,8 +52,6 @@ public class AirportDetailsViewController implements Initializable {
     private Label websiteLabel;
 
 
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadAirportDetails("yyz");
@@ -69,6 +71,12 @@ public class AirportDetailsViewController implements Initializable {
         phoneLabel.setText(airportDetails.getPhone());
         websiteLabel.setText(airportDetails.getWebsite());
     }
+
+    @FXML
+    private void returnToMainPage(ActionEvent event) throws IOException {
+        SceneChanger.changeScenes(event, "airport-view.fxml");
+    }
+
 }
 
 

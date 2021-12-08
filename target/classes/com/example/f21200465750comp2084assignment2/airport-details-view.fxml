@@ -66,7 +66,7 @@
                 </VBox>
             </center>
             <bottom>
-                <Button mnemonicParsing="false" text="Retuen to Main Page" BorderPane.alignment="CENTER" />
+                <Button mnemonicParsing="false" onAction="#returnToMainPage" text="Retuen to Main Page" BorderPane.alignment="CENTER" />
             </bottom>
         </BorderPane>
     </children>
