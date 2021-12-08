@@ -27,7 +27,6 @@ public class SceneChanger {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxmlFile));
             Scene scene = new Scene(fxmlLoader.load());
 
-
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();

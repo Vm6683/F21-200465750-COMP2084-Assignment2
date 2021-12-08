@@ -7,6 +7,16 @@ public class ApiResponse {
 
     private  AirportDetails[] airportDetails;
 
+/*    private Urls[] urls;
+
+    public Urls[] getUrls() {
+        return urls;
+    }
+
+    public void setUrls(Urls[] urls) {
+        this.urls = urls;
+    }
+*/
     public AirportDetails[] getAirportDetails() {
         return airportDetails;
     }

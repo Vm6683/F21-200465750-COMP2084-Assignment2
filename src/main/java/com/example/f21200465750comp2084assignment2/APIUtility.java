@@ -11,34 +11,33 @@ import java.net.http.HttpResponse;
 
 public class APIUtility {
 
- /*
-        // This method stores Json file in our local machine and then returns on GUI.
-        public static  ApiResponse getAirportJsonfile()
-    {
-        Gson gson = new Gson();
-        ApiResponse response = null;
+    /*
+           // This method stores Json file in our local machine and then returns on GUI.
+           public static  ApiResponse getAirportJsonfile()
+       {
+           Gson gson = new Gson();
+           ApiResponse response = null;
 
-        try (
-                FileReader fileReader = new FileReader("jsonData.json");
-                JsonReader jsonReader = new JsonReader(fileReader);
-                )
-        {
-            response = gson.fromJson(jsonReader, ApiResponse.class);
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
+           try (
+                   FileReader fileReader = new FileReader("jsonData.json");
+                   JsonReader jsonReader = new JsonReader(fileReader);
+                   )
+           {
+               response = gson.fromJson(jsonReader, ApiResponse.class);
+           }
+           catch (Exception e)
+           {
+               e.printStackTrace();
+           }
 
-        return response;
-    }
-*/
-        // This method returns response directly from API
-    public static ApiResponse getAirportsFromAPI(String searchTerm)
-    {
+           return response;
+       }
+   */
+    // This method returns response directly from API
+    public static ApiResponse getAirportsFromAPI(String searchTerm) {
         searchTerm = searchTerm.trim().replace(" ", "%20");
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://aerodatabox.p.rapidapi.com/airports/search/term?q="+ searchTerm))
+                .uri(URI.create("https://aerodatabox.p.rapidapi.com/airports/search/term?q=" + searchTerm))
                 .header("x-rapidapi-host", "aerodatabox.p.rapidapi.com")
                 .header("x-rapidapi-key", "009bfd70c5msh425674fe5331d9bp1fbb4bjsn72d0db0eb5b8")
                 .method("GET", HttpRequest.BodyPublishers.noBody())
@@ -56,7 +55,7 @@ public class APIUtility {
         Gson gson = new Gson();
         ApiResponse apiResponse = null;
 
-        try{
+        try {
             apiResponse = gson.fromJson(jsonString, ApiResponse.class);
         } catch (JsonSyntaxException e) {
             e.printStackTrace();
@@ -68,16 +67,46 @@ public class APIUtility {
     public static AirportDetails getAirportDetailsFromAPI(String iata) {
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://airport-info.p.rapidapi.com/airport?iata="+ iata))
+                .uri(URI.create("https://airport-info.p.rapidapi.com/airport?iata=" + iata))
                 .header("x-rapidapi-host", "airport-info.p.rapidapi.com")
                 .header("x-rapidapi-key", "009bfd70c5msh425674fe5331d9bp1fbb4bjsn72d0db0eb5b8")
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
         HttpResponse<String> response = null;
         try {
-            response  = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+            response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        String jsonString = response.body();
+
+        Gson gson = new Gson();
+        AirportDetails airportDetails = null;
+
+        try {
+            airportDetails = gson.fromJson(jsonString, AirportDetails.class);
+        } catch (JsonSyntaxException e) {
+            e.printStackTrace();
+        }
+        return airportDetails;
+    }
+}
+  /*  public static AirportDetails getAirportUrlsFromAPI(String iata) {
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://aerodatabox.p.rapidapi.com/airports/iata/" + iata))
+                .header("x-rapidapi-host", "aerodatabox.p.rapidapi.com")
+                .header("x-rapidapi-key", "009bfd70c5msh425674fe5331d9bp1fbb4bjsn72d0db0eb5b8")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = null;
+        try {
+            response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        } catch (IOException e) {
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -94,4 +123,5 @@ public class APIUtility {
         }
         return airportDetails;
     }
-}
+*/
+

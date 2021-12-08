@@ -24,6 +24,7 @@ public class AirportViewController {
 
     @FXML
     public void getSearchResults() {
+        errorMsgLabel.setVisible(true);
         initialAirportDataListView.getItems().clear();
         errorMsgLabel.setVisible(false);
         ApiResponse apiResponse = APIUtility.getAirportsFromAPI(searchTextField.getText());

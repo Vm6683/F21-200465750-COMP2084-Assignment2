@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21200465750comp2084assignment2.Controllers.AirportDetailsViewController">
+<AnchorPane prefHeight="600.0" prefWidth="700.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21200465750comp2084assignment2.Controllers.AirportDetailsViewController">
     <children>
         <BorderPane layoutX="110.0" layoutY="81.0" prefHeight="500.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
-                <Label id="header" fx:id="fullNameLabel" text="Airport Fullname" BorderPane.alignment="CENTER" />
+                <Label id="header" fx:id="fullNameLabel" styleClass="root" text="Airport Fullname" BorderPane.alignment="CENTER" />
             </top>
             <center>
                 <VBox BorderPane.alignment="CENTER">
@@ -42,31 +42,31 @@
                             <children>
                                 <Label text="IATA Code :" />
                                 <Label text="ICAO Code :" GridPane.rowIndex="1" />
-                                <Label text="Name" GridPane.rowIndex="2" />
+                                <Label text="Name:" GridPane.rowIndex="2" />
                                 <Label layoutX="10.0" layoutY="109.0" text="Street Number :" GridPane.rowIndex="3" />
                                 <Label text="Street :" GridPane.rowIndex="4" />
                                 <Label text="City :" GridPane.rowIndex="5" />
                                 <Label text="Country :" GridPane.rowIndex="6" />
-                                <Label fx:id="iataLabel" text="Label" GridPane.columnIndex="1" />
-                                <Label fx:id="icaoLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                <Label fx:id="streetNumberLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                <Label fx:id="streetLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                <Label fx:id="cityLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                <Label fx:id="countryLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                <Label fx:id="iataLabel" prefHeight="19.0" prefWidth="98.0" text="Label" GridPane.columnIndex="1" />
+                                <Label fx:id="icaoLabel" prefHeight="19.0" prefWidth="101.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label fx:id="nameLabel" prefHeight="19.0" prefWidth="281.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Label fx:id="streetNumberLabel" prefHeight="19.0" prefWidth="67.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <Label fx:id="streetLabel" prefHeight="19.0" prefWidth="239.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <Label fx:id="cityLabel" prefHeight="19.0" prefWidth="137.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                <Label fx:id="countryLabel" prefHeight="19.0" prefWidth="117.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                                 <Label text="Postal code :" GridPane.rowIndex="7" />
                                 <Label text="Phone :" GridPane.rowIndex="8" />
                                 <Label text="Website :" GridPane.rowIndex="9" />
-                                <Label fx:id="postalCodeLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                                <Label fx:id="phoneLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                                <Label fx:id="websiteLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                <Label fx:id="postalCodeLabel" prefHeight="19.0" prefWidth="262.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                <Label fx:id="phoneLabel" prefHeight="19.0" prefWidth="202.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                <Label fx:id="websiteLabel" prefHeight="19.0" prefWidth="280.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                             </children>
                         </GridPane>
                     </children>
                 </VBox>
             </center>
          <bottom>
-            <Button mnemonicParsing="false" onAction="#returnToMainPage" text="Button" BorderPane.alignment="CENTER" />
+            <Button mnemonicParsing="false" onAction="#returnToMainPage" text="Return to Main Page" BorderPane.alignment="CENTER" />
          </bottom>
         </BorderPane>
     </children>
